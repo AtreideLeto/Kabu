@@ -1,0 +1,64 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @stock.name %>
+</p>
+
+<p>
+  <strong>Buydate:</strong>
+  <%= @stock.buydate %>
+</p>
+
+<p>
+  <strong>Buynum:</strong>
+  <%= @stock.buynum %>
+</p>
+
+<p>
+  <strong>Buyprice:</strong>
+  <%= @stock.buyprice %>
+</p>
+
+<p>
+  <strong>Selldate:</strong>
+  <%= @stock.selldate %>
+</p>
+
+<p>
+  <strong>Sellnum:</strong>
+  <%= @stock.sellnum %>
+</p>
+
+<p>
+  <strong>Sellprice:</strong>
+  <%= @stock.sellprice %>
+</p>
+
+<p>
+  <strong>Note:</strong>
+  <%= @stock.note %>
+</p>
+
+<p>
+  <strong>Judge:</strong>
+  <%= @stock.judge %>
+</p>
+
+<p>
+  <strong>Profitloss:</strong>
+  <%= @stock.profitloss %>
+</p>
+
+<p>
+  <strong>Picture:</strong>
+  <%= @stock.picture %>
+</p>
+
+<p>
+  <strong>Filename:</strong>
+  <%= @stock.filename %>
+</p>
+
+<%= link_to 'Edit', edit_stock_path(@stock) %> |
+<%= link_to 'Back', stocks_path %>

@@ -1,0 +1,77 @@
+<%= form_with(model: stock, local: true) do |form| %>
+  <% if stock.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(stock.errors.count, "error") %> prohibited this stock from being saved:</h2>
+
+      <ul>
+      <% stock.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :buydate %>
+    <%= form.datetime_select :buydate %>
+  </div>
+
+  <div class="field">
+    <%= form.label :buynum %>
+    <%= form.number_field :buynum %>
+  </div>
+
+  <div class="field">
+    <%= form.label :buyprice %>
+    <%= form.number_field :buyprice %>
+  </div>
+
+  <div class="field">
+    <%= form.label :selldate %>
+    <%= form.datetime_select :selldate %>
+  </div>
+
+  <div class="field">
+    <%= form.label :sellnum %>
+    <%= form.number_field :sellnum %>
+  </div>
+
+  <div class="field">
+    <%= form.label :sellprice %>
+    <%= form.number_field :sellprice %>
+  </div>
+
+  <div class="field">
+    <%= form.label :note %>
+    <%= form.text_field :note %>
+  </div>
+
+  <div class="field">
+    <%= form.label :judge %>
+    <%= form.number_field :judge %>
+  </div>
+
+  <div class="field">
+    <%= form.label :profitloss %>
+    <%= form.number_field :profitloss %>
+  </div>
+
+  <div class="field">
+    <%= form.label :picture %>
+    <%= form.text_field :picture %>
+  </div>
+
+  <div class="field">
+    <%= form.label :filename %>
+    <%= form.text_field :filename %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

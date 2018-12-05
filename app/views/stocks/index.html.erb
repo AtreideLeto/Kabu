@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Stocks</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Buydate</th>
+      <th>Buynum</th>
+      <th>Buyprice</th>
+      <th>Selldate</th>
+      <th>Sellnum</th>
+      <th>Sellprice</th>
+      <th>Note</th>
+      <th>Judge</th>
+      <th>Profitloss</th>
+      <th>Picture</th>
+      <th>Filename</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @stocks.each do |stock| %>
+      <tr>
+        <td><%= stock.name %></td>
+        <td><%= stock.buydate %></td>
+        <td><%= stock.buynum %></td>
+        <td><%= stock.buyprice %></td>
+        <td><%= stock.selldate %></td>
+        <td><%= stock.sellnum %></td>
+        <td><%= stock.sellprice %></td>
+        <td><%= stock.note %></td>
+        <td><%= stock.judge %></td>
+        <td><%= stock.profitloss %></td>
+        <td><%= stock.picture %></td>
+        <td><%= stock.filename %></td>
+        <td><%= link_to 'Show', stock %></td>
+        <td><%= link_to 'Edit', edit_stock_path(stock) %></td>
+        <td><%= link_to 'Destroy', stock, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Stock', new_stock_path %>
