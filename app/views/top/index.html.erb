@@ -1,0 +1,63 @@
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- BootstrapのCSS読み込み -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <!-- <link href="css/bootstrap.min.css" rel="stylesheet"> -->
+    <!-- jQuery読み込み -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> -->
+    <!-- BootstrapのJS読み込み -->
+    <!-- <script src="js/bootstrap.min.js"></script> -->
+  <title>株あがれ</title>
+  <style type="text/css">
+    .jumbotron {background: url("<%= asset_path "kabu_top_m.jpg" %>") center no-repeat; background-size: cover;}
+  </style>
+</head>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">株あがれ。</a>
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+  <span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarNav">
+  <ul class="navbar-nav">
+    <li class="nav-item active">
+      <a class="nav-link" href="<%= root_path %>">Home <span class="sr-only">(current)</span></a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="<%= stocks_path %>">Search/Index</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="<%= new_stock_path %>">Add</a>
+    </li>
+  </ul>
+</div>
+</nav>
+<div class="jumbotron">
+  <div class="container text-light">
+    <h1>株購入日誌</h1>
+    これまで購入した株について整理。
+  </div>
+  <div class="container text-light">
+    <h4>更新履歴</h4>
+    <ul>
+    <li>
+    <2018.12.07>サイト新規作成
+    </li>
+    </ul>
+  </div>
+</div>
+<h1>総合評価</h1>
+全体件数 | 勝ち数 | 負け数 | 勝率<br>
+<h2>評価損益</h2>
+総合評価損益（登録データ分）
+<hr>
+<h3>タスク</h3>
+<ul>
+  <li>チャートの拡大表示対応。</li>
+  <li>評価損益の表示。</li>
+</ul>

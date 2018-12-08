@@ -52,7 +52,11 @@
 
 <p>
   <strong>Picture:</strong>
-  <%= @stock.picture %>
+    <%= 
+      if @stock.picture != nil 
+        image_tag send_img_stock_path(@stock.id), :class => "img-thumbnail"
+      end 
+    %>
 </p>
 
 <p>

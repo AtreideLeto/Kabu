@@ -17,6 +17,11 @@
   </div>
 
   <div class="field">
+    <%= form.label :code %>
+    <%= form.text_field :code %>
+  </div>
+
+  <div class="field">
     <%= form.label :buydate %>
     <%= form.datetime_select :buydate %>
   </div>
@@ -63,15 +68,11 @@
 
   <div class="field">
     <%= form.label :picture %>
-    <%= form.text_field :picture %>
-  </div>
-
-  <div class="field">
-    <%= form.label :filename %>
-    <%= form.text_field :filename %>
+    <%= form.file_field :picture %>
   </div>
 
   <div class="actions">
     <%= form.submit %>
+    <button type="button" class="btn vtn-primary">更新</button>
   </div>
 <% end %>

@@ -5,6 +5,11 @@ class StocksController < ApplicationController
   # GET /stocks.json
   def index
     @stocks = Stock.all
+
+    # 表示用書式に編集
+    @stocks.each do |stock|
+      stock.code = stock.code.floor
+    end
   end
 
   # GET /stocks/1
@@ -40,8 +45,17 @@ class StocksController < ApplicationController
   # PATCH/PUT /stocks/1
   # PATCH/PUT /stocks/1.json
   def update
+    # respond_to:1つのアクションから複数のフォーマットで返す
     respond_to do |format|
       if @stock.update(stock_params)
+      
+        # 写真のアップロードと保存
+        if params[:stock].has_key? :picture
+          @stock.picture = params[:stock]["picture"].read
+          @stock.filename = params[:stock]["picture"].original_filename
+          @stock.save
+        end
+
         format.html { redirect_to @stock, notice: 'Stock was successfully updated.' }
         format.json { render :show, status: :ok, location: @stock }
       else
@@ -61,14 +75,25 @@ class StocksController < ApplicationController
     end
   end
 
-  private
+  # 写真の画像表示
+  def send_img
+    @stock = set_stock
+
+    if @stock.picture != nil
+      send_data @stock.picture, type: "image/jpeg", disposition: :inline
+    end
+  end
+
+  # メンバーメソッド
+private
     # Use callbacks to share common setup or constraints between actions.
     def set_stock
       @stock = Stock.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
+    # stockモデルに関係のある変数のみを記載する。直接テーブルにUpdate可能となる。
     def stock_params
-      params.require(:stock).permit(:name, :buydate, :buynum, :buyprice, :selldate, :sellnum, :sellprice, :note, :judge, :profitloss, :picture, :filename)
+      params.require(:stock).permit(:name, :code, :buydate, :buynum, :buyprice, :selldate, :sellnum, :sellprice, :note, :judge, :profitloss)
     end
 end
